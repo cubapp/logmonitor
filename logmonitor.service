@@ -1,0 +1,15 @@
+[Unit]
+Description=Log File Keyword Monitor
+After=network.target
+
+[Service]
+Type=simple
+User=###USER
+Group=###USERGROUP
+ExecStart=/usr/bin/python3 /opt/logmonitor/logmonitor.py
+WorkingDirectory=/opt/logmonitor
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
